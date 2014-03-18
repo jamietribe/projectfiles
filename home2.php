@@ -1,7 +1,8 @@
- <html>
+<html>
 <head>
 <title>The Human Project</title>
 <link rel="stylesheet" href="master.css" type="text/css">
+<meta name="robots" content="noindex">
 </head>
 <?php
 	require_once('includes/config.php');
@@ -108,17 +109,16 @@ search_button {
 	height: 41px;
 	padding: 0 3px;
 	position: relative;
-	width: 108%;
+	width: 1021px;
 	top: -19px;
 }
 #popup {
-	background: rgba(200,200,200,0.60);
-	-webkit-border-radius: 20px 20px 20px 20px;
-	border-radius: 20px 20px 20px 20px;
-	left: 75%;
+	background: none repeat scroll 0 0 rgba(200, 200, 200, 0.6);
+	border-radius: 20px;
+	left: 66%;
 	opacity: 0.69;
-	position: absolute;
-	top: 222px;
+	position: fixed;
+	top: 214px;
 	width: 170px;
 }
 #popup:after {
@@ -126,7 +126,6 @@ search_button {
 	position: absolute;
 	top: -31px;
 	right: -15px;
-	
 }
 #popup3 {
 	-webkit-border-radius: 20px 20px 20px 20px;
@@ -144,31 +143,19 @@ search_button {
 	height: auto;
 	left: 19%;
 	position: fixed;
-	top: 43%;
+	top: 30%;
 	width: 14%;
 }
-#popup2:after {
-	content: url(images/tab_arrow_05.png);
-	position: absolute;
-	top: 0;
-	left: -15px;
-	-moz-transform: scaleX(-1);
-	-o-transform: scaleX(-1);
-	-webkit-transform: scaleX(-1);
-	transform: scaleX(-1);
-	filter: FlipH;
-	-ms-filter: "FlipH";
+#popup2 li {
+	color: #020246;
+	font-family: "Century Gothic";
+	font-size: 16px;
+	line-height: 48px;
+	text-align: left;
+	text-decoration: none;
 }
-#popup2 li{
-color: #020246;
-    font-family: "Century Gothic";
-    font-size: 16px;
-    line-height: 48px;
-    text-align: left;
-    text-decoration: none;	
-}
-#popup2 a{
-	text-decoration:none;	
+#popup2 a {
+	text-decoration: none;
 	color: #020246;
 }
 #name {
@@ -240,12 +227,12 @@ color: #020246;
 }
 #head {
 	 
-	    display: none;
-    height: 60px;
-    left: -65px;
-    position: absolute;
-    top: 5px;
-    width: 52px;
+	height: 60px;
+	left: 129px;
+	position: absolute;
+	top: 38px;
+	width: 52px;
+	display:none;
 }
 </style>
 
@@ -282,29 +269,13 @@ $letters = array(
 ?>
     </ul>
   </section>
-  <section class="humanbody">
-  <ul class="bodyselection">
-      <a href="#" id="head_part">head</a>  
+  <section class="humanbody bodyselection">
+   <a href="#" id="head_part">head</a> 
    <div id="head"><img src="head.gif"/></div>
-   <img class="hbody" src="images/human_body2.png"/>
-    </ul>
-     <section id="head_list">
     
-<ul>
-<li class="eyesl"><a href="#">eyesl   </a></li>
-<li class="eyesr"><a href="#">eyesr   </a></li>
-<li class="nose"><a href="#">nose  </a></li>
-<li class="earsl"><a href="#">earsl   </a></li>
-<li class="earsr"><a href="#">earsr   </a></li>
-<li class="mouth"><a href="#">mouth   </a></li>
-<li class="skinl"><a href="#">skinl</a></li>
-<li class="skinr"><a href="#">skinr </a></li>
-<li class="brain"><a href="#">brain   </a></li>
-<li class="hair"><a href="#">hair   </a></li>
-</ul>
-</section>
-  </section>
-  
+     
+    </section>
+    
   <section class="maladies">
     <ul>
       <?php
@@ -332,19 +303,16 @@ $letters = array(
     <li><a href="#">shop</a></li>
   </ul>
 </div>
+<div id="popup4"></div>
 </div>
-
 <script src="jquery-1.9.1.min.js"></script> 
 <script> 
    $(document).ready(function(e) {
 	   
-	    $('.hbody').show();
 	   $('#popup').hide();
 	   $('#popup2').hide();
 	   $('#navcontainer').hide();
-	    $('#popup4').hide();
-		$('#head').hide();
-		$('#head_list').hide();
+	    $('#popup4').hide()
 	   
     	$('.vhs a').click(function(e){
 		e.preventDefault();
@@ -353,9 +321,7 @@ $letters = array(
 			 $('#popup').hide();
 			 $('#popup3').hide();
 			 $('#navcontainer').hide();
-			 	$('#head').hide();
-				$('#head_list').hide();
-				 $('.hbody').show();
+			  $('#popup4').hide()
 			});	
 		});
 		
@@ -366,72 +332,60 @@ $letters = array(
 			  $('#navcontainer').show();
 				var info=$('#popup3').load(this.href, function(){});
 				 $('#popup2').hide();
-				 	$('#head').hide();
-					$('#head_list').hide();
-					 $('.hbody').show();
 				  
 				
 			});
-		
-		$('.maladies a').click(function(e){
-		e.preventDefault();
-		 $('#popup3').hide();
-		 $('#navcontainer').hide();
-		 $('#head').hide();
-		 $('#head_list').hide();
-		  $('.hbody').show();
-		 
-		var data= $('#popup').load(this.href, function(){
-			  
-			var height=$('#popup').height();
-			var top=e.pageY - height/2 + 'px' ;
-			 
-			$('#popup').css('top',top)
-			$('#popup').show('slow');
-			 $('#popup2').hide();
-			$('#popup a').click(function(e){
-				e.preventDefault();
-				 $('#popup3').html('');
-			  $('#popup3').show();
-			   $('.hbody').show();
-			  
-				var info=$('#popup3').load(this.href, function(){});
-				 $('#navcontainer').show();
-				  $('.hbody').show();
-				 $('#popup').hide();
-				  $('#popup2').hide();
-				     $('#popup4').hide();	
-					 
-				
-			});
-			 
-			 
-			});	
-		});
 			
-			
-	$('#head_part')	.click( function(){
-		$('#head').show();
-		$('#head_list').show();
-		 $('.hbody').hide();
-		 $('#popup').hide();
-			   $('#popup2').hide();
-			  $('#popup3').hide();
-				 $('#popup4').hide();
-	});	
-		$('.wrapper').click(function(e){
+			$('.wrapper').click(function(e){
 				e.preventDefault();
 			  $('#popup').hide();
 			   $('#popup2').hide();
 			  $('#popup3').hide();
 				 $('#popup4').hide();
-				  	
-				 
 				  
 				
 			});
+			 
+		
+		$('.maladies a').click(function(e){
+		e.preventDefault();
+		 $('#popup4').hide()
+		 $('#popup3').hide();
+		 $('#navcontainer').hide();
+		 
+		var data= $('#popup').load(this.href, function(){
+			  
+		<!--	var height=$('#popup:after').height();-->
+	<!--		var top=e.pageY - height/2 + 'px' ;-->
+			 
+			$('#popup').css('top',top)
+			$('#popup').show('slow');
+			 $('#popup2').hide();
+			  $('#popup4').hide()
+			$('#popup a').click(function(e){
+				e.preventDefault();
+				 $('#popup3').html('');
+			  $('#popup3').show();
+			  
+				var info=$('#popup3').load(this.href, function(){});
+				 $('#navcontainer').show();
+				 $('#popup').hide();
+				  $('#popup2').hide();
+				   $('#popup4').hide()
+				
+				});
+ 
+			});
+			
+				}); 
+				 
+	$('#head_part')	.click( function(){
+		$('#head').show();
+		
+	});
 	
-});
-   </script>
+	
+ });
+    
 </body>
 </html>
