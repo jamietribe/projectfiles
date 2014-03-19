@@ -137,6 +137,16 @@ search_button {
 	top: 43%;
 	width: 74%;
 }
+#popup4 {
+	-webkit-border-radius: 20px 20px 20px 20px;
+	border-radius: 20px 20px 20px 20px;
+	background-color: rgba(200, 200, 200, 0.8);
+	height: auto;
+	left: 11%;
+	position: fixed;
+	top: 43%;
+	width: 74%;
+}
 #popup2 {
 	background-color: rgba(200, 200, 200, 0.8);
 	border-radius: 20px;
@@ -291,18 +301,18 @@ $letters = array(
     </ul>
      <section id="head_list">
     
-<ul>
-<li class="eyesl"><a href="#">eyesl   </a></li>
-<li class="eyesr"><a href="#">eyesr   </a></li>
-<li class="nose"><a href="#">nose  </a></li>
-<li class="earsl"><a href="#">earsl   </a></li>
-<li class="earsr"><a href="#">earsr   </a></li>
-<li class="mouth"><a href="#">mouth   </a></li>
-<li class="skinl"><a href="#">skinl</a></li>
-<li class="skinr"><a href="#">skinr </a></li>
-<li class="brain"><a href="#">brain   </a></li>
-<li class="hair"><a href="#">hair   </a></li>
-</ul>
+        <ul>
+        <li class="eyesl eyes"><a href="parts.php?part=eyes">eyesl</a></li>
+        <li class="eyesr eyes"><a href="parts.php?part=eyes">eyesr   </a></li>
+        <li class="nose"><a href="parts.php?part=nose">nose  </a></li>
+        <li class="earsl ears"><a href="parts.php?part=ears">earsl   </a></li>
+        <li class="earsr ears"><a href="parts.php?part=ears">earsr   </a></li>
+        <li class="mouth"><a href="parts.php?part=mouth">mouth   </a></li>
+        <li class="skinl skin"><a href="parts.php?part=skin">skinl</a></li>
+        <li class="skinr skin"><a href="parts.php?part=skin">skinr </a></li>
+        <li class="brain"><a href="parts.php?part=brain">brain   </a></li>
+        <li class="hair"><a href="parts.php?part=hair">hair   </a></li>
+        </ul>
 </section>
   </section>
 
@@ -324,6 +334,7 @@ $letters = array(
 <div id="popup"></div>
 <div id="popup2"></div>
 <div id="popup3"></div>
+<div id="popup4"></div>
 <div id="navcontainer">
   <ul id="navlist">
     <li class="active"><a id="info" href="#" data-info id="current">information</a></li>
@@ -333,7 +344,7 @@ $letters = array(
     <li><a href="#">shop</a></li>
   </ul>
 </div>
-</div>
+
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script> 
    $(document).ready(function(e) {
@@ -430,7 +441,24 @@ $letters = array(
 			//$('#popup4').hide(); 
 		});
 	
+	$('#head_list a').click(function(e){
+		e.preventDefault();
+		$('#popup4').load(e.target.href, function(e){
+			$('#popup4').show();
+			$('#popup4 a').click(function(e){
+				e.preventDefault();	
+				$('#popup3').load(this.href,function(e){
+					$('#popup3').show();	
+				});
+				$('#navcontainer').show();
+				$('#popup').hide();
+				$('#popup2').hide();
+				$('#popup4').hide();
+			});
+		});
 	});
+	
+});
    </script>
 </body>
 </html>
