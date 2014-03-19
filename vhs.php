@@ -2,8 +2,8 @@
 	require_once('includes/config.php');
 	
 	$l = $_GET['l'];
-	mysql_real_escape_string($l);
-	if(count($l) > 1) $l = 'a';
+	$l = $db->real_escape_string($l);
+	if(strlen($l) > 1) $l = 'a';
 
 	//query the database and store the results
 	//in the $myData variable

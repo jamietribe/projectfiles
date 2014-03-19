@@ -7,8 +7,7 @@
 	require_once('includes/config.php');
 	//query the database and store the results
 	//in the $myData variable
-	$sql = 'SELECT * 
-  FROM maladies';
+	$sql = 'SELECT * FROM maladies';
 	
   $myData = $db->query($sql);
 
@@ -282,11 +281,13 @@ $letters = array(
 ?>
     </ul>
   </section>
-  <section class="humanbody">
+  
+
+<section class="humanbody">
   <ul class="bodyselection">
       <a href="#" id="head_part">head</a>  
    <div id="head"><img src="head.gif"/></div>
-   <img class="hbody" src="images/human_body2.png"/>
+   <img class="hbody" src="images/human_body2.png" />
     </ul>
      <section id="head_list">
     
@@ -304,7 +305,7 @@ $letters = array(
 </ul>
 </section>
   </section>
-  
+
   <section class="maladies">
     <ul>
       <?php
@@ -320,118 +321,115 @@ $letters = array(
     </ul>
   </section>
 </div>
-<div id="popup"> </div>
-<div id="popup2"> </div>
+<div id="popup"></div>
+<div id="popup2"></div>
 <div id="popup3"></div>
 <div id="navcontainer">
   <ul id="navlist">
-    <li id="active"><a href="#" id="current">information</a></li>
-    <li><a href="#">uses</a></li>
-    <li><a href="#">interactions</a></li>
+    <li class="active"><a id="info" href="#" data-info id="current">information</a></li>
+    <li><a id="usez" href="#" data-uses>uses</a></li>
+    <li><a id="interact" href="#" data-interact>interactions</a></li>
     <li><a href="#">videos</a></li>
     <li><a href="#">shop</a></li>
   </ul>
 </div>
 </div>
-
-<script src="jquery-1.9.1.min.js"></script> 
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script> 
    $(document).ready(function(e) {
 	   
-	    $('.hbody').show();
-	   $('#popup').hide();
-	   $('#popup2').hide();
-	   $('#navcontainer').hide();
-	    $('#popup4').hide();
+
+		$('.hbody').show();
+		$('#popup').hide();
+		$('#popup2').hide();
+		$('#navcontainer').hide();
+	    //$('#popup4').hide();
 		$('#head').hide();
 		$('#head_list').hide();
-	   
+
+
     	$('.vhs a').click(function(e){
-		e.preventDefault();
-		var data= $('#popup2').load(this.href, function(){
-			$('#popup2').show('slow');
-			 $('#popup').hide();
-			 $('#popup3').hide();
-			 $('#navcontainer').hide();
-			 	$('#head').hide();
-				$('#head_list').hide();
-				 $('.hbody').show();
-			});	
-		});
-		
-			$('#popup2 a').click(function(e){
+			e.preventDefault();
+			$('#popup2').click(function(e){
 				e.preventDefault();
-				 $('#popup3').html('');
-			  $('#popup3').show();
-			  $('#navcontainer').show();
-				var info=$('#popup3').load(this.href, function(){});
-				 $('#popup2').hide();
-				 	$('#head').hide();
+				//alert('test');
+				$('#popup3').html('');
+				$('#navcontainer').show('fast', function(e){
+					$('#navlist #usez').attr('data-uses') = section;
+					alert(section);
+				});
+					
+				$('#popup3').load(e.target.href, function(e){
+					$('#popup3').show();
+					$('#popup2').hide();
+					$('#head').hide();
 					$('#head_list').hide();
 					 $('.hbody').show();
-				  
-				
+				});
 			});
-		
-		$('.maladies a').click(function(e){
-		e.preventDefault();
-		 $('#popup3').hide();
-		 $('#navcontainer').hide();
-		 $('#head').hide();
-		 $('#head_list').hide();
-		  $('.hbody').show();
-		 
-		var data= $('#popup').load(this.href, function(){
-			  
-			var height=$('#popup').height();
-			var top=e.pageY - height/2 + 'px' ;
-			 
-			$('#popup').css('top',top)
-			$('#popup').show('slow');
-			 $('#popup2').hide();
-			$('#popup a').click(function(e){
-				e.preventDefault();
-				 $('#popup3').html('');
-			  $('#popup3').show();
-			   $('.hbody').show();
-			  
-				var info=$('#popup3').load(this.href, function(){});
-				 $('#navcontainer').show();
-				  $('.hbody').show();
-				 $('#popup').hide();
-				  $('#popup2').hide();
-				     $('#popup4').hide();	
-					 
-				
-			});
-			 
-			 
+
+			$('#popup2').load(this.href, function(e){
+				$('#popup2').show('slow');
+				$('#popup').hide();
+				$('#popup3').hide();
+				$('#navcontainer').hide();
+				$('#head').hide();
+				$('#head_list').hide();
+				$('.hbody').show(); 
 			});	
 		});
-			
-			
-	$('#head_part')	.click( function(){
-		$('#head').show();
-		$('#head_list').show();
-		 $('.hbody').hide();
-		 $('#popup').hide();
-			   $('#popup2').hide();
-			  $('#popup3').hide();
-				 $('#popup4').hide();
-	});	
-		$('.wrapper').click(function(e){
-				e.preventDefault();
-			  $('#popup').hide();
-			   $('#popup2').hide();
-			  $('#popup3').hide();
-				 $('#popup4').hide();
-				  	
-				 
-				  
-				
-			});
 	
-});
+
+		$('.maladies a').click(function(e){
+			e.preventDefault();
+		 	$('#popup3').hide();
+		 	$('#navcontainer').hide();
+		 	$('#head').hide();
+		 	$('#head_list').hide();
+		  	$('.hbody').show();
+		 
+			$('#popup').load(this.href, function(){
+				var height=$('#popup').height();
+				var top=e.pageY - height/2 + 'px' ;
+			 
+				$('#popup').css('top',top)
+				$('#popup').show('slow');
+			 	$('#popup2').hide();
+
+				$('#popup a').click(function(e){
+					e.preventDefault();
+				 	$('#popup3').html('');
+			  		$('#popup3').show();
+			  		$('.hbody').show();
+			  
+					$('#popup3').load(this.href);
+				 	$('#navcontainer').show();
+				 	$('#popup').hide();
+				  	$('#popup2').hide();
+				  	//$('#popup4').hide();
+				});
+			});	
+		});
+
+			$('#head_part')	.click( function(){
+			$('#head').show();
+			$('#head_list').show();
+			$('.hbody').hide();
+			$('#popup').hide();
+			$('#popup2').hide();
+			$('#popup3').hide();
+			//$('#popup4').hide();
+		});
+
+		$('.wrapper').click(function(e){
+			e.preventDefault();
+			$('#popup').hide();
+			$('#popup2').hide();
+			$('#popup3').hide();
+			//$('#popup4').hide(); 
+		});
+	
+	});
    </script>
 </body>
 </html>

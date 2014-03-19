@@ -1,30 +1,17 @@
- <section>
-<nav>
-<ul>
-<li><a href="">information</a></li>
-<li><a href="">uses</a></li>
-<li><a href="">interactions</a></li>
-<li><a href="">videos</a></li>
-<li><a href="">shop</a></li>
-</ul></nav>
-	<section id="information">
-        <div class="info_box">
-        <title>  </title>
-        <p class="info221">
-        </p>
-        </div>
-    </section>
-    <section id="uses">
-        <tittle>   </tittle>
-        <p class="info221">
-        </p>
-        <ul>
-        </ul>
-        </div>
-    </section>
-    <section id="interactions">
-    <tittle>   </tittle>
-        <p class="info221">
-        </p>
-    
-    </section>
+<?php
+require_once('includes/config.php');
+    //query the database and store the results
+    //in the $myData variable
+    $id = $_GET['id'];
+
+    if(is_numeric($id)) intval($id);
+
+    $sql = "SELECT * 
+    FROM sections 
+    WHERE section_id ='".$id. "'";
+    $myData = $db->query($sql);
+
+    $row = $myData->fetch_assoc();
+    echo '<p id="name">' .$row['section_name']. "</p>\n\r";
+    echo '<p id="uses">' .$row['info']. "</p>\n\r";
+    $db->close();

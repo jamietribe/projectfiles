@@ -22,9 +22,37 @@
 ?>
 
 
-<?php
 	 
 
-$db->close();
 
+<?php 
+	
+	echo '<script>';
+	echo 'var id = ' . $id .';'; 
+?>
+
+<?php
+$js = <<<END
+	$('#usez').click(function(e){
+		e.preventDefault();
+		$('#popup3').load('uses.php?id=' + id);
+	});
+
+	$('#interact').click(function(e){
+		e.preventDefault();
+		$('#popup3').load('interact.php?id=' + id);
+	});
+
+	$('#info').click(function(e){
+		e.preventDefault();
+		$('#popup3').load('info.php?id=' + id);
+	});
+END;
+echo $js;
+echo '</script>';
+
+
+
+$db->close();
+?>
  

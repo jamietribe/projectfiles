@@ -10,14 +10,7 @@
  AND remedies.ma_id =".$section;
  
  $myData = $db->query($sql);
-echo '<nav>';
-echo '<ul>;';
-echo '<li><a href="">information</a></li>';
-echo '<li><a href="">uses</a></li>';
-echo '<li><a href="">interactions</a></li>';
-echo '<li><a href="">videos</a></li>';
-echo '<li><a href="">shop</a></li>';
-echo '</ul></nav>;'
+
 echo '<ul>';
 while($row = $myData->fetch_assoc())
 {

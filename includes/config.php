@@ -4,10 +4,10 @@
 putenv('TZ_US/Eastern');
 
 //create DB constants
-define('HOST', 'resellhost.accountsupportmysql.com');
+define('HOST', 'localhost');
 define('DBNAME' , 'thehumanproject');
-define('USER' ,'jamie09');
-define('PASS' , 'hpproject');
+define('USER' ,'root');
+define('PASS' , 'r00t');
 
 //connect to DB
 $db = new mysqli(HOST, USER , PASS, DBNAME);
