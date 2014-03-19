@@ -443,6 +443,7 @@ $letters = array(
 	$('#head_list a').click(function(e){
 		e.preventDefault();
 		$('#popup4').load(e.target.href, function(e){
+			$('#popup4').show();
 			$('#popup4 a').click(function(e){
 				e.preventDefault();	
 				$('#popup3').load(this.href,function(e){
