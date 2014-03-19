@@ -1,6 +1,6 @@
 <?php
  require_once('includes/config.php');
- $section = $GET['s'];
+ $section = $_GET['s'];
  $sql = 'SELECT * FROM remedies INNER JOIN sections WHERE mal_id = ' + $section;
  $myData = $db->query($sql);
 
