@@ -373,7 +373,7 @@ $letters = array(
 				$('#popup2 a').click(function(e){
 					e.preventDefault();
 					$('#popup3').html('');
-					$('#navcontainer').show('fast'});
+					$('#navcontainer').show('fast');
 					
 					$('#popup3').load(e.target.href, function(e){
 						$('#popup3').show();
