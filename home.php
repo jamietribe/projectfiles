@@ -349,7 +349,6 @@ $letters = array(
 <script> 
    $(document).ready(function(e) {
 	   
-
 		$('.hbody').show();
 		$('#popup').hide();
 		$('#popup2').hide();
@@ -373,12 +372,8 @@ $letters = array(
 
 				$('#popup2 a').click(function(e){
 					e.preventDefault();
-					alert('test');
 					$('#popup3').html('');
-					$('#navcontainer').show('fast', function(e){
-						alert(section);
-						$('#navlist #usez').attr('data-uses') = section;
-					});
+					$('#navcontainer').show('fast'});
 					
 					$('#popup3').load(e.target.href, function(e){
 						$('#popup3').show();
