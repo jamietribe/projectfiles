@@ -27,6 +27,7 @@ header {
 }
 .vhs {
 	float: left;
+	left: 70px;
 	position: absolute;
 	top: 31%;
 }
@@ -65,105 +66,185 @@ header {
 	top: 26%;
 }
 .humanbody {
-	left: 38%;
+	left: 28%;
 	position: fixed;
-	top: 23%;
+	top: 14%;
+}
+hbody {
+	left: -10px;
+	position: absolute;
+	top: -27px;
+	width: 140%;
+}
+#head_list {
+	left: 684px;
+	position: fixed;
+	top: 230px;
+}
+#head_list ul {
+	list-style: none;
+}
+#head_list li {
 	 
 }
-hbody{
-left: -10px;
-    position: absolute;
-    top: -27px;
-    width: 81%;	
+#head_part a {
+	  height: 68px;
+    left: 714px;
+    position: fixed;
+    top: 210px;
+    width: 48px;
 }
-#head_list{
-left: 110px;
-    position: absolute;
-    top: 64px;
-	
+.eyesl, .eyesr, .nose, .earsl, .earsr, .mouth, .skinl, .skinr, .brain, .hair {
+	position: absolute;
 }
-#head_list ul{
-	list-style:none;
+.eyesl {
+	 height: 57px;
+    left: -78px;
+    top: 265px;
+    width: 91px;
 }
-#head_list li{ 
-border:1px red solid;}
-
-.eyesl, .eyesr    
-,.nose   
-,.earsl    
-,.earsr  
-,.mouth    
-,.skinl 
-,.skinr  
-,.brain    
-,.hair{
-position:absolute;	
-}
-
-
-.eyesl  {
- height: 43px;
-    left: -45px;
-    top: 151px;
-    width: 64px;}  
 .eyesr {
-height: 43px;
-    left: 75px;
-    top: 151px;
-    width: 64px;}
+	height: 54px;
+    left: 117px;
+    top: 262px;
+    width: 86px;
+}
 .nose {
- height: 123px;
-    left: 31px;
-    top: 129px;}
+height: 175px;
+    left: 24px;
+    top: 252px;
+    width: 79px;
+}
 .earsl {
-height: 100px;
-    left: -119px;
-    top: 162px;
-    width: 40px;}
+height: 161px;
+    left: -199px;
+    top: 276px;
+    width: 61px;
+}
 .earsr {
- height: 113px;
-    left: 172px;
-    top: 153px;
-    width: 45px;}
+	 height: 164px;
+    left: 276px;
+    top: 276px;
+    width: 45px;
+}
 .mouth {
- height: 30px;
+	height: 64px;
     left: 0;
-    top: 280px;
-    width: 100px;}
+    top: 446px;
+    width: 133px;
+}
 .skinl {
- height: 124px;
-    left: -70px;
-    top: 200px;
-    width: 66px;}
+ 
+    height: 171px;
+    left: -129px;
+    top: 341px;
+    width: 112px;
+}
 .skinr {
-height: 124px;
-    left: 103px;
-    top: 200px;
-    width: 66px;}
+	height: 174px;
+    left: 149px;
+    top: 339px;
+    width: 103px;
+ 
+}
 .brain {
- height: 84px;
-    left: -44px;
-    width: 200px;}
-.hair{
-left: -9px;
+	height: 152px;
+    left: -63px;
+    top: 62px;
+    width: 259px;
+}
+.hair {
+	height: 30px;
+    left: -31px;
     top: -20px;
-    width: 103px;}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+    width: 184px;
+}
+.sup{
+     position:fixed; 
+     left: 28px;
+	 top: 203px;
+	z-index: 999999;
+color: #F0F0F0;
+    font-family: "Century Gothic";
+    font-size: 23px;
+    font-weight: bold;
+   line-height: 0.6;
+    position: fixed;
+    text-align: center;
+    text-shadow: 2px 3.464px 21px #000101;	
+}
+.mal{
+	   color: #F0F0F0;
+    font-family: "Century Gothic";
+    font-size: 23px;
+    font-weight: bold;
+    left: 88%;
+    line-height: 0.6;
+    position: fixed;
+    text-align: center;
+    text-shadow: 2px 3.464px 21px #000101;
+    top: 19%;
+    z-index: 999999;
+}
+
+.sup-img{
+    height: 130px;
+    left: 6%;
+    position: fixed;
+    top: 17.5%;
+    width: 79px;
+    z-index: 9999;
+}
+.mal-img{
+   height: 95px;
+    left: 89%;
+    position: fixed;
+    top: 17%;
+    width: 148px;
+    z-index: 9999;
+}	
+.clear img {
+    left: 90%;
+    position: fixed;
+    top: 59px;
+    z-index: 4000;
+}
+.clearall{
+    color: #FFFFFF;
+    font-family: "Helvetica Neue";
+    font-size: 60px;
+    font-weight: bold;
+    left: 90%;
+    position: fixed;
+    text-align: center;
+    text-shadow: 0 1px 1px #000000;
+    top: 9px;
+    transform: matrix(0.458333, 0, 0, 0.464286, 0, 0);
+    z-index: 5000;
+}
+dblue{
+	width:20px;
+	height:20px;
+	.Rectangle_21 {
+  background-color: rgba( 13, 36, 69, 0.612 );
+  position: absolute;
+  left: 555px;
+  top: 488px;
+  z-index: 27;
+ }
+lblue{
+	width:20px;
+	height:20px;
+	.Rectangle_21 {
+    background-color: rgba( 19, 51, 96, 0.29 );
+  position: absolute;
+  left: 555px;
+  top: 488px;
+  z-index: 27;
+ }	
+  
+
+
+
+
+

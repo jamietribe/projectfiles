@@ -1,4 +1,4 @@
-<html>
+ <html>
 <head>
 <title>The Human Project</title>
 <link rel="stylesheet" href="master.css" type="text/css">
@@ -81,7 +81,7 @@ header {
 	width: 100%;
 }
 .search {
-	left: 18%;
+	left: 10%;
 	position: fixed;
 	top: 90px;
 	width: 70%;
@@ -114,42 +114,28 @@ search_button {
 	background: rgba(200,200,200,0.60);
 	-webkit-border-radius: 20px 20px 20px 20px;
 	border-radius: 20px 20px 20px 20px;
-	left: 70%;
+	left: 75%;
 	opacity: 0.69;
-	position:fixed;
+	position: absolute;
+	top: 222px;
 	width: 170px;
-	top:27%;
 }
-#popup tab {
+#popup:after {
 	content: url(images/tab_arrow_05.png);
 	position: absolute;
 	top: -31px;
 	right: -15px;
+	
 }
 #popup3 {
+	-webkit-border-radius: 20px 20px 20px 20px;
+	border-radius: 20px 20px 20px 20px;
 	background-color: rgba(200, 200, 200, 0.8);
-	border-radius: 20px;
 	height: auto;
-	left: 15%;
+	left: 11%;
 	position: fixed;
-	top: 36%;
-	width: 71%;
-}
-#popup4 {
-	background-color: rgba(200, 200, 200, 0.8);
-	border-radius: 20px;
-	height: auto;
-	left: 17%;
-	position: fixed;
-	top: 31%;
-	width: 13%;
-}
-#popup4 ul {
-	list-style: none outside none;
-}
-#popup4 a {
-	color: #020246;
-	text-decoration: none;
+	top: 43%;
+	width: 74%;
 }
 #popup2 {
 	background-color: rgba(200, 200, 200, 0.8);
@@ -157,38 +143,32 @@ search_button {
 	height: auto;
 	left: 19%;
 	position: fixed;
-	top: 32%;
+	top: 43%;
 	width: 14%;
-	overflow: auto;
 }
-#popup2 li {
+#popup2:after {
+	content: url(images/tab_arrow_05.png);
+	position: absolute;
+	top: 0;
+	left: -15px;
+	-moz-transform: scaleX(-1);
+	-o-transform: scaleX(-1);
+	-webkit-transform: scaleX(-1);
+	transform: scaleX(-1);
+	filter: FlipH;
+	-ms-filter: "FlipH";
+}
+#popup2 li{
+color: #020246;
+    font-family: "Century Gothic";
+    font-size: 16px;
+    line-height: 48px;
+    text-align: left;
+    text-decoration: none;	
+}
+#popup2 a{
+	text-decoration:none;	
 	color: #020246;
-	font-family: "Century Gothic";
-	font-size: 16px;
-	line-height: 48px;
-	text-align: left;
-	text-decoration: none;
-}
-#popup2 a {
-	text-decoration: none;
-	color: #020246;
-}
-#popup4 li {
-	color: #020246;
-	font-family: "Century Gothic";
-	font-size: 16px;
-	line-height: 48px;
-	text-align: left;
-	text-decoration: none;
-}
-#popup3 h2 {
-	color: #0E1F41;
-	font-family: "Century Gothic";
-	font-size: 27px;
-	font-weight: bold;
-	line-height: 0.6;
-	padding-left: 60px;
-	text-align: left;
 }
 #name {
 	font-size: 30px;
@@ -222,20 +202,9 @@ search_button {
 .bodyselection li {
 	border: 1px red solid;
 }
-.bodyselection a {
-	 height: 71px;
-    left: 67%;
-    position: absolute;
-    top: 7%;
-    width: 45px;
-}
-
- 
-
-
 #navcontainer {
 	left: 30%;
-	position: fixed;
+	position: absolute;
 	top: 20%;
 	border: 1px solid red;
 }
@@ -253,7 +222,6 @@ search_button {
 	right: 15px;
 	top: -24px;
 	width: 900px;
-	height: 60px;
 }
 #navcontainer ul li {
 	display: inline;
@@ -270,12 +238,13 @@ search_button {
 	color: #fff;
 }
 #head {
-	display: none;
-	height: 60px;
-	left: -149px;
-	position: absolute;
-	top: -35px;
-	width: 52px;
+	 
+	    display: none;
+    height: 60px;
+    left: -65px;
+    position: absolute;
+    top: 5px;
+    width: 52px;
 }
 </style>
 
@@ -286,21 +255,14 @@ search_button {
       <form class="search" method="get" action="http://www.designedbyj.me/humanproject.com/search.php">
         <table cellpadding="0px" cellspacing="0px">
           <tr>
-            <td class="imput" ><input class="bar" type="text" name="zoom_query" style=" background:url(images/search_tab.png) no-repeat; height:67px; padding:0px 19px; font-size: 20px; position:relative; color:#ECEAEA; font-family: "Century Gothic";"></td>
-            <td class="search_button" style=" "><input type="submit" value="" style="border-style: none; background:url(images/search_icon.png) no-repeat; width: 36px; height: 53px; border-style: none; left: -99px;position: relative; top: -24px;"></td>
+            <td class="imput" ><input class="bar" type="text" name="zoom_query" style=" background:url(images/search_tab.png); height:67px; padding:0px 3px; position:relative;"></td>
+            <td class="search_button" style="border-style:solid;border-color:#4B7B9F;border-width:1px;">Search
+              <input type="submit" value="" style="border-style: none; background:url(images/icons_13.png) no-repeat; width: 24px; height: 20px;"></td>
           </tr>
         </table>
       </form>
     </header>
   </section>
-  <p class="sup text">Select a Suppliment </p>
-  <img class="sup-img" src="images/azbkg.png"/>
-  
-  <p class="mal text">Select a Ailment</p>
-  <img class="mal-img" src="images/mal_bkg.png"/>
-  
-  <a class="clear" href=""><img src="images/back_btn.png"/>
-  <p class="clearall">clear</p>
   <section class="vhs">
     <ul>
       <?php
@@ -319,28 +281,31 @@ $letters = array(
 ?>
     </ul>
   </section>
-  <section class="humanbody">
-    <ul class="bodyselection">
-      <a href="#" id="head_part"> </a>
-      <div id="head"><img src="images/head.png" style="margin-left: 189px;
-    margin-top:61px;"/></div>
-      <img class="hbody" src="images/human_body2.png" />
+  
+
+<section class="humanbody">
+  <ul class="bodyselection">
+      <a href="#" id="head_part">head</a>  
+   <div id="head"><img src="images/head_06.png"/></div>
+   <img class="hbody" src="images/human_body2.png" />
     </ul>
-    <section id="head_list">
-      <ul>
-        <li><a class="eyesl eyes" href="parts.php?part=eyes"></a></li>
-        <li><a class="eyesr eyes" href="parts.php?part=eyes"></a></li>
-        <li><a class="nose" href="parts.php?part=nose"></a> </li>
-        <li><a class="earsl ears" href="parts.php?part=ears"></a></li>
-        <li><a class="earsr ears" href="parts.php?part=ears"></a></li>
-        <li><a class="mouth" href="parts.php?part=mouth"></a></li>
-        <li><a class="skinl skin" href="parts.php?part=skin"></a></li>
-        <li><a class="skinr skin" href="parts.php?part=skin"></a></li>
-        <li><a class="brain" href="parts.php?part=brain"></a></li>
-        <li><a class="hair" href="parts.php?part=hair"></a></li>
-      </ul>
-    </section>
+     <section id="head_list">
+    
+<ul>
+<li class="eyesl"><a href="#">eyesl   </a></li>
+<li class="eyesr"><a href="#">eyesr   </a></li>
+<li class="nose"><a href="#">nose  </a></li>
+<li class="earsl"><a href="#">earsl   </a></li>
+<li class="earsr"><a href="#">earsr   </a></li>
+<li class="mouth"><a href="#">mouth   </a></li>
+<li class="skinl"><a href="#">skinl</a></li>
+<li class="skinr"><a href="#">skinr </a></li>
+<li class="brain"><a href="#">brain   </a></li>
+<li class="hair"><a href="#">hair   </a></li>
+</ul>
+</section>
   </section>
+
   <section class="maladies">
     <ul>
       <?php
@@ -358,27 +323,22 @@ $letters = array(
 </div>
 <div id="popup"></div>
 <div id="popup2"></div>
-<div id="popup3">
-<span class="dblue">  </span>
-<span class="lblue">  </span>
-<span class="dblue">  </span>
-
-</div>
-<div id="popup4"></div>
+<div id="popup3"></div>
 <div id="navcontainer">
   <ul id="navlist">
     <li class="active"><a id="info" href="#" data-info id="current">information</a></li>
     <li><a id="usez" href="#" data-uses>uses</a></li>
     <li><a id="interact" href="#" data-interact>interactions</a></li>
     <li><a href="#">videos</a></li>
-    <li><a href="https://www.nutritionhouseactive.com/">shop</a></li>
+    <li><a href="#">shop</a></li>
   </ul>
-   
 </div>
-<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script> 
+</div>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script> 
    $(document).ready(function(e) {
 	   
+
 		$('.hbody').show();
 		$('#popup').hide();
 		$('#popup2').hide();
@@ -390,6 +350,23 @@ $letters = array(
 
     	$('.vhs a').click(function(e){
 			e.preventDefault();
+			$('#popup2').click(function(e){
+				e.preventDefault();
+				//alert('test');
+				$('#popup3').html('');
+				$('#navcontainer').show('fast', function(e){
+					$('#navlist #usez').attr('data-uses') = section;
+					alert(section);
+				});
+					
+				$('#popup3').load(e.target.href, function(e){
+					$('#popup3').show();
+					$('#popup2').hide();
+					$('#head').hide();
+					$('#head_list').hide();
+					 $('.hbody').show();
+				});
+			});
 
 			$('#popup2').load(this.href, function(e){
 				$('#popup2').show('slow');
@@ -398,21 +375,7 @@ $letters = array(
 				$('#navcontainer').hide();
 				$('#head').hide();
 				$('#head_list').hide();
-				$('.hbody').show();
-
-				$('#popup2 a').click(function(e){
-					e.preventDefault();
-					$('#popup3').html('');
-					$('#navcontainer').show('fast');
-					
-					$('#popup3').load(e.target.href, function(e){
-						$('#popup3').show();
-						$('#popup2').hide();
-						$('#head').hide();
-						$('#head_list').hide();
-					 	$('.hbody').show();
-					});
-				});
+				$('.hbody').show(); 
 			});	
 		});
 	
@@ -427,7 +390,7 @@ $letters = array(
 		 
 			$('#popup').load(this.href, function(){
 				var height=$('#popup').height();
-				var top=e.pageY - height/0 + 'px' ;
+				var top=e.pageY - height/2 + 'px' ;
 			 
 				$('#popup').css('top',top)
 				$('#popup').show('slow');
@@ -443,8 +406,6 @@ $letters = array(
 				 	$('#navcontainer').show();
 				 	$('#popup').hide();
 				  	$('#popup2').hide();
-					$('#head').hide();
-					$('#head_list').hide();
 				  	//$('#popup4').hide();
 				});
 			});	
@@ -465,38 +426,10 @@ $letters = array(
 			$('#popup').hide();
 			$('#popup2').hide();
 			$('#popup3').hide();
-			$('#popup4').hide(); 
-			 
+			//$('#popup4').hide(); 
 		});
 	
-	$('#head_list a').click(function(e){
-		e.preventDefault();
-		$('#popup4').load(e.target.href, function(e){
-			$('#popup4').show();
-			$('#popup4 a').click(function(e){
-				e.preventDefault();	
-				$('#popup3').load(this.href,function(e){
-					$('#popup3').show();	
-				});
-				$('#navcontainer').show();
-				$('#popup').hide();
-				$('#popup2').hide();
-				$('#popup4').hide();
-			});
-		});
 	});
-	$('.clear').click(function(e){
-			e.preventDefault();
-			$('#popup').hide();
-		 	$('#popup2').hide();
-			$('#popup3').hide();
-		 	$('#popup4').hide();
-		 	$('#navcontainer').hide();
-		 	$('#head').hide();
-		 	$('#head_list').hide();
-		  	$('.hbody').show();
-		});
-});
    </script>
 </body>
 </html>

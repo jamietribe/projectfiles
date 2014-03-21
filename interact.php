@@ -25,12 +25,28 @@ require_once('includes/config.php');
 	FROM interactions 
 	WHERE section_id ='".$id. "'";
 	$myData2 = $db->query($sql2);
-
+	
+	$severity;
 	while($item = $myData2->fetch_assoc())
-	{
-		echo $item['severity']."\n\r";
-		echo $item['drug_name']."\n\r";
-		echo "<br>";
+		$temp=$item['severity'];
+		{
+		if($severity==$temp)
+		{
+			echo $item['drug_name']."\n\r";	
+		}
+		else
+		{
+			echo $item['severity']."\n\r";
+			echo $item['drug_name']."\n\r";
+			echo "<br>";		
+		}
+		
+			echo $temp;
+			echo "<br>";
+			echo $severity;
+			
+		
+		$severity=$item['severity'];
 	}
 
 
