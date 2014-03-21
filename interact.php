@@ -23,32 +23,37 @@ require_once('includes/config.php');
 
 	$sql2 = "SELECT * 
 	FROM interactions 
-	WHERE section_id ='".$id. "'";
+	WHERE section_id ='".$id. "' 
+	ORDER BY interactions.severity";
 	$myData2 = $db->query($sql2);
 	
-	$severity;
+	$severity = '';
+	$temp = '';
+
+	echo '<table class="interactions"><tbody>';
 	while($item = $myData2->fetch_assoc())
-		$temp=$item['severity'];
+	{
+		$temp = $item['severity'];
+
+		if($temp === $severity)
 		{
-		if($severity==$temp)
-		{
-			echo $item['drug_name']."\n\r";	
+			echo '<td>';
+			echo $item['drug_name'];	
+			echo '</td>';
 		}
 		else
 		{
-			echo $item['severity']."\n\r";
-			echo $item['drug_name']."\n\r";
-			echo "<br>";		
-		}
-		
-			echo $temp;
-			echo "<br>";
-			echo $severity;
-			
+			echo '<tr><th>';
+			echo $item['severity'];
+			echo '</th><td>';
+			echo $item['drug_name'];
+			echo '</td>';		
+		}	
 		
 		$severity=$item['severity'];
 	}
-
+	echo "</tr>";
+	echo '</tbody></table>';
 
 
     $db->close();
