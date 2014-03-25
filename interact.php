@@ -58,4 +58,20 @@ require_once('includes/config.php');
 
     $db->close();
 
+echo '<style>
+table.interactions span {
+    position:static !important;
+    height:auto;
+    width:auto;
+    color:white;
+    background:#010c1d;
+}
+
+table.interactions th span {
+    position:static !important;
+    height:auto;
+    width:auto;
+    color:#010c1d;
+}
+</style>';
 

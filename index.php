@@ -22,6 +22,13 @@ span{   background-color: #FFFFFF;
     position: absolute;
     top: 40%;
     width: 100%;}
+
+table.interactions span {
+    position:static !important;
+    height:auto;
+    width:auto;
+    color:red;
+}
 </style>
 
 
