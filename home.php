@@ -450,7 +450,8 @@ $letters = array(
 			});	
 		});
 
-			$('#head_part')	.click( function(){
+
+		$('#head_part')	.click( function(){
 			$('#head').show();
 			$('#head_list').show();
 			$('.hbody').hide();
@@ -460,32 +461,35 @@ $letters = array(
 			//$('#popup4').hide();
 		});
 
+
 		$('.wrapper').click(function(e){
 			e.preventDefault();
 			$('#popup').hide();
 			$('#popup2').hide();
 			$('#popup3').hide();
 			$('#popup4').hide(); 
-			 
 		});
 	
-	$('#head_list a').click(function(e){
-		e.preventDefault();
-		$('#popup4').load(e.target.href, function(e){
-			$('#popup4').show();
-			$('#popup4 a').click(function(e){
-				e.preventDefault();	
-				$('#popup3').load(this.href,function(e){
-					$('#popup3').show();	
+
+		$('#head_list a').click(function(e){
+			e.preventDefault();
+			$('#popup4').load(e.target.href, function(e){
+				$('#popup4').show();
+				$('#popup4 a').click(function(e){
+					e.preventDefault();	
+					$('#popup3').load(this.href,function(e){
+						$('#popup3').show();	
+					});
+					$('#navcontainer').show();
+					$('#popup').hide();
+					$('#popup2').hide();
+					$('#popup4').hide();
 				});
-				$('#navcontainer').show();
-				$('#popup').hide();
-				$('#popup2').hide();
-				$('#popup4').hide();
 			});
 		});
-	});
-	$('.clear').click(function(e){
+
+
+		$('.clear').click(function(e){
 			e.preventDefault();
 			$('#popup').hide();
 		 	$('#popup2').hide();
@@ -496,7 +500,9 @@ $letters = array(
 		 	$('#head_list').hide();
 		  	$('.hbody').show();
 		});
-});
-   </script>
+	});
+
+
+</script>
 </body>
 </html>

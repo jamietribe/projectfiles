@@ -38,19 +38,19 @@ require_once('includes/config.php');
 		if($temp === $severity)
 		{
 			echo '<td>';
-			echo $item['drug_name'];	
+			echo '<span>' . $item['drug_name'] . '</span>';	
 			echo '</td>';
 		}
 		else
 		{
 			echo '<tr><th>';
-			echo $item['severity'];
+			echo '<span>' . $item['severity'] . '</span>';	
 			echo '</th><td>';
-			echo $item['drug_name'];
+			echo '<span>' . $item['drug_name'] . '</span>';	
 			echo '</td>';		
 		}	
 		
-		$severity=$item['severity'];
+		$severity = $item['severity'];
 	}
 	echo "</tr>";
 	echo '</tbody></table>';
